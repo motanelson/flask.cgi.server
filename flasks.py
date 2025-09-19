@@ -72,6 +72,8 @@ def index():
 
 @app.route('/<filename>')
 def render_file(filename):
+    if filename.find("..")>-1:
+        return HTML_ERROR
     if filename.find(".gif")>0 or filename.find(".jpg")>0 or filename.find(".png")>0 or filename.find(".bmp")>0 or filename.find(".ico")>0:
         print("image")
         try:
