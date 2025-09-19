@@ -92,6 +92,7 @@ def render_file(filename):
 
 
         try:
+            filename=filename.replace("?"," ")
             os.system("./"+filename+" > out.txt")
             f11=True
             s=""
